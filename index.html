@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio</title>
+  </head>
+  <body>
+    <script>
+      // for (i = 0; i < 5; i++) {
+      //   datos.push(prompt("Ingresa un dato"));
+      //   for (j = 0; j < 5; j++) {
+      //     if (datos[j] == 0) {
+      //       datos.splice(j, 1);
+      //     }
+      //   }
+      // }
+      // document.write(
+      //   `Los datos ingresados por el usuario sin el cero son: ${datos}`
+      // );
+
+      // ========================= EJERCICIO 1 =========
+
+      let cantidadDatos = prompt("Ingresa cuantos datos deseas");
+      let datos = [];
+
+      for (i = 0; i < cantidadDatos; i++) {
+        const datosUsuario = prompt("Ingrese un dato");
+        if (datosUsuario !== "0") {
+          datos.push(datosUsuario);
+        }
+      }
+      document.write(
+        `Los datos ingresados por el usuario sin el cero son: ${datos}`
+      );
+
+      //  =========================== EJERCICIO 2 =======
+
+      let cantidadDatos = prompt("Ingresa cuantos datos deseas");
+      let datosString = [];
+      let datosNumber = [];
+      for (i = 0; i < cantidadDatos; i++) {
+        const datosUsuarioS = prompt("Ingresa un dato sea numero o palabra");
+        if (isNaN(Number(datosUsuarioS)) === true) {
+          let inicial = datosUsuarioS.charAt(0);
+          datosString.push(inicial);
+        } else {
+          let inicial2 = datosUsuarioS.charAt(0);
+          datosNumber.push(inicial2);
+        }
+      }
+      datosNumber.sort();
+      datosString.sort();
+
+      datosTotales = datosString.concat(datosNumber);
+
+      document.write(datosTotales);
+    </script>
+  </body>
+</html>
