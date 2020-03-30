@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herencia</title>
+  </head>
+  <body>
+    <script>
+      class Auto {
+        constructor(marca, modelo, kilometraje) {
+          this.marca = marca;
+          this.modelo = modelo;
+          this.kilometraje = kilometraje;
+        }
+        presentar() {
+          return `El auto es de la marca ${this.marca}, el modelo es ${this.modelo} y el kilometraje es ${this.kilometraje}`;
+        }
+      }
+
+      let auto = new Auto("Mazda", "Mazda 3", "0km");
+
+      class Conductor extends Auto {
+        constructor(marca, modelo, kilometraje, color, conductor) {
+          super(marca, modelo, kilometraje);
+          this.color = color;
+          this.conductor = conductor;
+        }
+        presentar() {
+          return `${super.presentar()}, el color del auto es ${
+            this.color
+          } y el nombre del conductor es ${this.conductor}`;
+        }
+      }
+
+      let conductor = new Conductor(
+        "Mazda",
+        "Mazda 3",
+        "0km",
+        "rojo",
+        "Marcos"
+      );
+      document.write(conductor.presentar());
+    </script>
+  </body>
+</html>
