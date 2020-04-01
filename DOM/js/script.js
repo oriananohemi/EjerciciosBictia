@@ -60,9 +60,9 @@ let letras = [
 ];
 
 for (i = 0; i < letras.length; i++) {
-  const palabra = prompt(
-    `Ingresa una palabra con la letra ${letras[i]}`
-  ).toLowerCase();
+  const palabra = prompt(`Ingresa una palabra con la letra ${letras[i]}`)
+    .toLowerCase()
+    .trim();
   if (letras[i] === palabra.charAt(0)) {
     new Palabra(letras[i], palabra, i).crear();
   } else {
